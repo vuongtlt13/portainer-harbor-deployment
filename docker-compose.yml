@@ -21,6 +21,8 @@ services:
     image: goharbor/harbor-registryctl:v2.8.4
     container_name: registryctl
     restart: always
+    env_file:
+      - stack.env
     cap_drop:
       - ALL
     cap_add:
@@ -39,6 +41,8 @@ services:
     image: goharbor/harbor-db:v2.8.4
     container_name: harbor-db
     restart: always
+    env_file:
+      - stack.env
     cap_drop:
       - ALL
     cap_add:
@@ -56,6 +60,8 @@ services:
     image: goharbor/harbor-core:v2.8.4
     container_name: harbor-core
     restart: always
+    env_file:
+      - stack.env
     cap_drop:
       - ALL
     cap_add:
@@ -91,6 +97,8 @@ services:
     image: goharbor/harbor-jobservice:v2.8.4
     container_name: harbor-jobservice
     restart: always
+    env_file:
+      - stack.env
     cap_drop:
       - ALL
     cap_add:
